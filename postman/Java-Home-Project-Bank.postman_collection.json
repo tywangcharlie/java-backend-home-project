@@ -69,6 +69,41 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "checkWallet",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Userid",
+						"value": "{{userid}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"fromUserId\": 1,\n\t\"toUserId\": 2,\n\t\"amount\": 1\n}"
+				},
+				"url": {
+					"raw": "http://localhost:10001/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "10001",
+					"path": [
+						"get"
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
