@@ -39,11 +39,7 @@ public class AdminService {
                     .set(TOKEN.TOKEN_, token)
                     .execute();
         }
-        Record1<String> record = DSL.using(jooqConfiguration).select(TOKEN.TOKEN_).from(TOKEN).where(TOKEN.TOKEN_.eq(token)).fetchOne();
-        String databaseToken = record.getValue(record.field1());
-        //String databaseToken = DSL.using(jooqConfiguration).select(TOKEN.TOKEN_).from(TOKEN).where(TOKEN.ADMINID.eq(UInteger.valueOf(adminUser.getId()))).fetch().getValue(0, TOKEN.TOKEN_);
-        //String databaseToken = DSL.using(jooqConfiguration).select(TOKEN.TOKEN_).from(TOKEN).where(TOKEN.TOKEN_.eq(token)).fetch().getValue(0, TOKEN.TOKEN_);
-        return token+"||"+databaseToken;
+        return token;
     }
 
     public boolean authenticate(String token) {
